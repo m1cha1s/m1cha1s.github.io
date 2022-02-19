@@ -1,3 +1,3 @@
 var posts = [
-    "timeDayReferance.md",
+    "timeDateReferance.md",
 ]
