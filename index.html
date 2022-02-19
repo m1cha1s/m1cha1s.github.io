@@ -31,7 +31,7 @@
                                 var postMD = req.responseText
 
                                 var postHTML = converter.makeHtml(postMD)
-                                document.querySelector("#posts").innerHTML += "<div> " + postHTML + " </div>"
+                                document.querySelector("#posts").innerHTML += "<div id='post'> " + postHTML + " </div>"
                             }
                         }
                     }
