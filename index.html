@@ -1,2 +1,46 @@
-Hello world!
-<a href="http://m1cha1s.github.io/test">GoTo Test</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m1cha1s blog</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+    <script src="m1cha1s.github.io/posts.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Posts</h1>
+
+        <div tag="posts">
+            <script>
+                var converter = new showdown.Converter({tables=true})
+
+                posts.forEach(post => {
+                    var postMD = ""
+                    var req = new XMLHttpRequest()
+                    
+                    req.open("GET", "https://m1cha1s.github.io/" + post, true)
+                    req.send(null)
+
+                    req.onreadystatechange = function () {
+                        if (req.readyState === 4 && req.status === 200) {
+                            var type = req.getResponseHeader("Content-Type")
+                            if (type.indexOf("text") === 1) {
+                                continue
+                            }
+                            var postMD = req.responseText
+                        }
+                    }
+
+                    var postHTML = converter.makeHtml(postMD)
+                    document.querySelector("#posts").innerHTML += "<div>" + postHTML + "</div>"
+                });
+
+            </script>
+        </div>
+
+    </div>
+</body>
+</html>

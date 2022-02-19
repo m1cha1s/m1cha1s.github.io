@@ -1,0 +1,3 @@
+var posts = [
+    "test.md",
+]
