@@ -7,7 +7,7 @@
     <title>m1cha1s blog</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
-    <script src="https://m1cha1s.github.io/posts.js"></script>
+    <!-- <script src="https://m1cha1s.github.io/posts.js"></script> -->
 
     <link rel="stylesheet" href="https://m1cha1s.github.io/bootstrap.min.css">
 </head>
@@ -56,25 +56,42 @@
                         parseImgDimensions:true
                     })
 
-                    posts.forEach(post => {
-                        var postMD = ""
-                        var req = new XMLHttpRequest()
-                        
-                        req.open("GET", "https://m1cha1s.github.io/posts/" + post, true)
-                        req.send(null)
+                    var regReq = new XMLHttpRequest()
 
-                        req.onreadystatechange = function () {
-                            if (req.readyState === 4 && req.status === 200) {
-                                var type = req.getResponseHeader("Content-Type")
-                                if (type.indexOf("text") !== 1) {
-                                    var postMD = req.responseText
+                    regReq.open("GET", "https://m1cha1s.io/registry.json")
+                    regReq.send(null)
 
-                                    var postHTML = converter.makeHtml(postMD)
-                                    document.querySelector("#posts").innerHTML += "<div id='post' class='card mb-3'><div class='card-body'>" + postHTML + " </div></div>"
-                                }
+                    regReq.onreadystatechange = function () {
+                        if (req.readyState === 4 && req.status === 200) {
+                            var type = req.getResponseHeader("Content-Type")
+                            if (type.indexOf("text") !== 1) {
+
+                                var registry = JSON.parse(regReq.responseText)
+
+                                var posts = registry.posts
+
+                                posts.forEach(post => {
+                                    var postMD = ""
+                                    var req = new XMLHttpRequest()
+                                    
+                                    req.open("GET", "https://m1cha1s.github.io/posts/" + post, true)
+                                    req.send(null)
+
+                                    req.onreadystatechange = function () {
+                                        if (req.readyState === 4 && req.status === 200) {
+                                            var type = req.getResponseHeader("Content-Type")
+                                            if (type.indexOf("text") !== 1) {
+                                                var postMD = req.responseText
+
+                                                var postHTML = converter.makeHtml(postMD)
+                                                document.querySelector("#posts").innerHTML += "<div id='post' class='card mb-3'><div class='card-body'>" + postHTML + " </div></div>"
+                                            }
+                                        }
+                                    }
+                                });
                             }
                         }
-                    });
+                    }
 
                 </script>
             </div>
