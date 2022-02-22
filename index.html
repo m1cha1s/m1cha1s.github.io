@@ -62,8 +62,8 @@
                     regReq.send(null)
 
                     regReq.onreadystatechange = function () {
-                        if (req.readyState === 4 && req.status === 200) {
-                            var type = req.getResponseHeader("Content-Type")
+                        if (regReq.readyState === 4 && regReq.status === 200) {
+                            var type = regReq.getResponseHeader("Content-Type")
                             if (type.indexOf("text") !== 1) {
 
                                 var registry = JSON.parse(regReq.responseText)
