@@ -1,0 +1,2 @@
+# Embedded lang dev 1
+I have started creating a small stack based programming language that is mainly aimed towards embedded system like arduinos and such. Currently there is some basic functions like `print println drop +`. I'am actively developing it and more details can be seen on its [REPO](https://github.com/m1cha1s/embeddedLang) where also ToDo can be found.
