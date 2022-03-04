@@ -1,0 +1,2 @@
+# School project PID controller
+There is a small school project that I was working on. We are to make a construction that has to make a ping pong ball levitate at a certaing height. In this project I am working on the 3D model and the mechanical assembly. The whole model can be found [here](https://github.com/m1cha1s/Ball_PID_device). This is my first time making such a detailed model and I'm accually enjoying it.
