@@ -1,5 +1,6 @@
 {
     "posts" : [
+        "physicsRocketSimulation.md",
         "schoolProject_PIDController.md",
         "embeddedLangDev1.md",
         "pcbBadge.md",

@@ -1,0 +1,4 @@
+# Phusics rocket simulation
+In my physics classes we've been working on a simulation of a rocket. The simulation started from a simple object being thrown up and then falling down to having an engine that creates thrust based on energy of fuel and its efficiency while getting influenced by air drag. Air drag on the other hand is influenced by the atmosphere properties that change with height of the rocket. Gravity is also being calculated from height. This is an experimental way of teaching physics that our teacher thought up. My version can be found [here](https://github.com/m1cha1s/rocket-py)
+## Flight plot as of today
+![flight](https://github.com/m1cha1s/rocket-py/blob/main/plots/Figure_1.png?raw=true =100%x*)
