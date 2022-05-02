@@ -1,0 +1,2 @@
+# Sorth
+Recently I've been working on a small Forth inspired programming language. Its main goals was that it can run on microcontrollers and that it can be easily extended from the user side. I'm almost done with the first version of the library. The only thing that is currently lacking is satisfying string support. The project can be found [here](https://github.com/m1cha1s/sorth) for now and later it will be available on [crates.io](https://crates.io/). It's shared under MIT licence.

@@ -1,5 +1,6 @@
 {
-    "posts" : [
+    "posts": [
+        "sorth_dev.md",
         "physicsRocketSimulation.md",
         "schoolProject_PIDController.md",
         "embeddedLangDev1.md",
